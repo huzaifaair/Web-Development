@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <title>Travel x Tesla</title>
+        <style type = "text/css">
+              *{
+              padding : 0;
+              margin : 0;
+              box-sizing : border-box;
+              }
+              header{
+                width : 100%;
+                height : 100vh;
+                background-image :linear-gradient(rgb(100, 185, 240),rgba(0,0,0,0.2)), 
+                url(/Picture/background.png);
+                background-size : cover;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;                
+              }
+              .Container{
+                width: 1100px;
+                max-width: 100%;
+                margin: 0 auto;
+              }
+              .row{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+              }
+              .card{
+                flex: 1 1 20rem;
+                flex-wrap: wrap;
+                margin: 20px 20px;
+                background:whitesmoke;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+                padding: 10px 0px;
+                border-radius: 20px;
+                align-self: normal;
+                flex-direction: column;
+                align-items: center;
+                transition: 0.4seconds;
+              }
+              .card h1{
+                font-size: 1.3rem;
+                text-transform: uppercase;
+                margin: 10px 0;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4seconds;
+              }
+              .card p{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                margin: 10px 0;
+                padding: 10px 20px;
+                transition: 0.4seconds;
+              } 
+              .card .btn{
+                display: inline-block;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                background: #1d44b1;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 20px;
+                margin-top: auto;
+                margin: 30px 20px 30px;
+                transition: 0.4seconds;
+              }    
+              .btn{
+                transition: all .5s ease;
+                color: #fff;
+                border: 3px solid white;
+                font-family:'Montserrat', sans-serif;
+                text-transform: uppercase;
+                text-align: center;
+                line-height: 1;
+                font-size: 17px;
+                background-color : transparent;
+                padding: 10px;
+                outline: none;
+                border-radius: 20px;
+              }   
+              .btn:hover {
+                color: #001F3F;
+                background-color: #26b4d8;
+             }
+              .card img{
+                max-width: 200px;
+                border-radius: 100px;
+                display: flex;
+                justify-content: center;
+                transition: 0.4seconds;
+                align-items: center;
+                margin: 60px;
+              }  
+              .card::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: #1d44b1;
+                transition: 0.4s;
+                transform: scale(.9);
+                z-index: -1;
+                transition: 0.4seconds;
+              }
+              .card:hover::before{
+                transform: scale(1.1);
+                box-shadow: 10px 10px 15px #1d44b1;
+                transition: 0.4seconds;
+              }
+              .card:hover{
+                color:rgb(51, 108, 110);
+                box-shadow: 0 0 5px #121314;
+                transition: 0.4seconds;
+      
+              }      
+              nav{
+                width: 100%;
+                height: 100px;
+                color: white;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+              }
+              .Logo{
+                font-size: 2em;
+                letter-spacing: 5px;
+                display: flex;  
+              }
+              .menu a{
+                text-decoration:none;
+                color: white;
+                padding:10px 30px;
+                font-size: 22px;
+                position: relative;
+                transition: 0.4s;
+                border-radius: 20px;
+              }
+              .menu a::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: #1d44b1;
+                transition: .5s;
+                transform: scale(.9);
+                z-index: -1;
+              }
+              .menu a:hover::before{
+                transform: scale(1.1);
+                box-shadow: 0 0 15px #1d44b1;
+              }
+              .menu a:hover{
+                color:white;
+                box-shadow: 0 0 5px #1d44b1;
+                text-shadow: 0 0 5px #1d44b1;
+              } 
+              .Register a{
+                text-decoration:none;
+                color: white;
+                background-color: #1d44b1;
+                padding: 10px 20px;
+                font-size: 20px;
+                border-radius: 20px;
+                transition: 0.5s;
+              }
+              .Register a:hover{
+                box-shadow: 0 20px 40px 0px rgba(6, 104, 233, 0.815);
+              }
+              .h-txt{
+                  max-width: 650px;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  text-align: center;
+              }
+              .h-txt span{
+                letter-spacing: 5px;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+              }
+              .h-txt h1{
+                letter-spacing: 5px;
+                font-size: 2.5em;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+              }
+              .h-txt a{
+                text-decoration:none;
+                color: white;
+                background-color:#1d44b1;
+                padding:10px 30px;
+                font-size: 20px;
+                position: relative;
+                transition: 0.5s;
+                border-radius: 20px;
+              }
+              .h-txt a::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                
+                transition: .5s;
+                transform: scale(.9);
+                z-index: -1; 
+              }
+              .h-txt a:hover::before{
+                transform: scale(1.1);
+                box-shadow: 0 10px #1da7b1;
+              }
+              .h-txt a:hover{
+                color:white;
+                box-shadow: 0 0 50px #12efff;
+                text-shadow: 0 0 50px #12ffdf;
+              }
+              .service-container{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                min-height: 10vh;
+                width:100%;
+                background-color:#001F3F;
+              }
+              .service-wrapper{
+                padding: 5% 8%;
+              }
+              .service{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+              .service h1{
+                color:white;
+                font-size: 5rem;
+                -webkit-text-stroke-width: 2px ;
+                -webkit-text-stroke-color: transparent;
+                letter-spacing: 3px;
+                background-color: rgb(4,52, 83);
+                background:linear-gradient(8deg, rgba(8,52,83,1) 0%, rgba(0,230,173,1)41%, rgba(41,17,45,1) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: relative;
+              }
+              .service h1::after{
+                content: "";
+                position: absolute;
+                top:100%;
+                left:10%;
+                height: 8px;
+                width: 80%;
+                border-radius: 8px;
+                background-color: rgba(255,255,255,0.05);
+              }
+              .service h1 span{
+                position: absolute;
+                top: 100%;
+                left: 10%;
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background-color: #72e2ae; 
+                animation: anim 5s linear infinite;
+              }
+              @keyframes anim{
+                95%{
+                  opacity: 1;
+                }
+                100%{
+                  opacity: 0;
+                  left: 88%;
+                }
+              }
+              .service-cards{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 30px;
+                margin-top: 80px;
+              }
+              .service-card{
+                height: 350px;
+                width: 370px;
+                background-color: #1c2335;
+                padding:3% 8%;
+                border: 0.2px solid rgba(114, 226, 174, 0.2);
+                border-radius: 8px;
+                transition: .6s;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                overflow: hidden;
+              }
+              .service-card::after{
+                content: "";
+                position: absolute;
+                top: 150%;
+                left: -200px;
+                width: 120%;
+                transform: rotate(50deg);
+                background-color: #fff;
+                height: 18px;
+                filter:blur(30px);
+                opacity: 0.5s;
+                transition: 1s;
+              }
+              .service-card:hover::after{
+                width: 225;
+                top:-100%;
+              }
+              .service-card i{
+                color: #72e2ae;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: 4.8rem;
+              }
+              .service-card h2{
+                color: whitesmoke;
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 1px;
+              }
+              .service-card p{
+                text-align: center;
+                width: 100%;
+                margin:12px 0;
+                color: rgba(255, 255, 255, 0.6);
+              }
+              .service-card:hover{
+                background-color: transparent;
+                transform: translateY(-8px);
+                border-color: #12efff;
+              }
+              .service-card:hover i{
+                color: #12efff;
+              }
+              @media screen and (max-width: 1200px){
+                .service-cards{
+                  grid-template-columns: repeat(2,1fr);
+                }
+              }
+              .paragraph{
+                background-color: rgba(255, 255, 255, 0.6);
+                justify-content: center;
+                align-items: center;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 20px;
+                padding: 50px 60px;
+              }
+              .paragraph:hover{
+                background-color: #2b4370;
+                transform: translateY(-8px);
+                border-color: #12efff;
+                transition: 0.4s;
+              }
+              .paragraph:hover::after{
+                content: "";
+                position: absolute;
+                top: 150%;
+                left: -200px;
+                width: 120%;
+                transform: rotate(50deg);
+                background-color: #fff;
+                height: 18px;
+                filter:blur(30px);
+                opacity: 0.5s;
+                transition: 1s;
+              }
+              .paragraph h2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 50px 50px;
+                background-color: #1d44b1;
+                border-radius: 20px;
+                color:rgba(255, 255, 255,0.6);
+              }
+              .paragraph h2:hover{
+                background-color: #5059a51f;
+                transform: translateY(-8px);
+                border-color: #12efff;
+                transition: 0.4s;
+              }
+              .paragraph h2:hover::after{
+                content: "";
+                position: absolute;
+                top: 150%;
+                left: -200px;
+                width: 120%;
+                transform: rotate(50deg);
+                background-color: #fff;
+                height: 18px;
+                filter:blur(30px);
+                opacity: 0.5s;
+                transition: 1s;
+              }
+              .paragraph h4{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 50px 50px;
+                background-color: #343846;
+                border-radius: 20px;
+                color:rgba(255, 255, 255,0.6);
+              }
+              .paragraph h4:hover{
+                background-color: #5059a51f;
+                transform: translateY(-8px);
+                border-color: #1279ff;
+                transition: 0.4s;
+              }
+              .paragraph h4:hover::after{
+                content: "";
+                position: absolute;
+                top: 150%;
+                left: -200px;
+                width: 120%;
+                transform: rotate(50deg);
+                background-color: #fff;
+                height: 18px;
+                filter:blur(30px);
+                opacity: 0.5s;
+                transition: 1s;
+              }
+              footer{
+                background-color: #001F3F;
+              }
+              .footercontainer{
+                width: 100%;
+                padding: 70px 30px 20px;
+              }
+              .socialicons{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+              }
+              .socialicons a{
+                text-decoration: none;
+                padding: 10px;
+                background-color: whitesmoke;
+                margin:10px;
+                border-radius: 50%;
+              }
+              .socialicons a i{
+                font-size: 2rem;
+                color: black;
+                opacity: 0.9;
+              }
+              .socialicons a:hover{
+                background-color: #111;
+                transition: 0.5s;
+              }
+
+              .socialicons a:hover i{
+                color: white;
+                transition: 0.5s;
+              }
+              .footernav{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                margin: 30px 0;
+              }
+
+              .footernav ul{
+                display: flex;
+                justify-content: center;
+              }
+              .footernav ul li a{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: white;
+                margin:20px;
+                text-decoration: none;
+                font-size: 1.3em;
+                opacity: 0.;
+                transition: 0.5s;
+              }
+              .footernav ul li a:hover{
+                opacity: 1;
+              }
+              .footerbottom{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                background-color: #000;
+                padding: 20px;
+                text-align: center;
+              }
+              .footerbottom p{
+                color: white;
+              }
+              .designer{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                opacity: 0.7;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 400;
+                margin: 0px 5px;
+              }
+
+               
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="Logo">
+                  Travel X Agency
+                </div>
+                <div class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">Destination</a>
+                    <a href="#">Tours</a>
+                    <a href="#">Packages</a>
+                    <a href="#">About us</a>
+                </div>
+                <div class="Register">
+                    <a href="#">Register</a>
+                </div>
+            </nav>
+            <section class="h-txt">
+              <span>Enjoy</span>
+              <h1>International Travelling Trips</h1>
+              <br>
+              <a href="#">Book Your Trip</a>
+            </section>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="Container">
+          <div class="row">
+            <div class="card">
+              <img src="/Picture/paris.png" alt="">
+              <h1>Paris</h1>
+              <p>Paris, France's capital, is a major European city and a global center for art, fashion, 
+                 gastronomy and culture.</p>
+                 <p>the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré</p>
+                 <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="card">
+              <img src="/Picture/tokyo.png" alt="">
+              <h1>Tokyo</h1>
+              <p>Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, 
+                from neon-lit skyscrapers to historic temples.</p>
+                 <p>(in the Tokyo National Museum),(in the Tokyo National Museum),(in the Tokyo National Museum)</p>
+                 <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="card">
+              <img src="/Picture/newyork.jpg" alt="">
+              <h1>NewYork</h1>
+              <p>New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. 
+                At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, 
+                </p>
+                <p>theater is staged in neon-lit Times Square.</p>
+                 <a href="#" class="btn">Read More</a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="paragraph">
+          <h2>Welcome to Travel X Agency</h2>
+          <br>
+          <p>
+              Your premier travel companion for unforgettable journeys! At Travel X Agency, we specialize in turning 
+                  your travel dreams into reality. Our dedicated team of experienced travel experts is committed to curating seamless and tailor-made experiences, ensuring that every moment of your adventure is filled with joy and discovery. Whether you're yearning for a tropical escape, a cultural odyssey, or an adrenaline-packed expedition, we've got you covered. From hassle-free flight bookings to handpicked accommodations and expertly crafted itineraries, our goal is to make your travel experience as smooth as a sunset on a tranquil beach. Let Travel X Agency be your passport to a world of excitement, exploration, and endless possibilities. Your journey begins with us!
+          </p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="service-container">
+          <div class="service-wrapper">
+            <div class="service">
+              <h1>Our Service <span></span></h1>
+              <div class="service-cards">
+                <div class="service-card">
+                  <i class="fa-brands fa-chromecast"></i>
+                  <h2>Busniess Strategy</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, corporis dolorem numquam, repudiandae 
+                    quaerat aut voluptate quod,hic animi quia illum ea esse eligendi facilis ut. Alias enim deleniti quae.</p>
+                </div>
+                <div class="service-card">
+                  <i class="fa-solid fa-layer-group"></i>
+                  <h2>Travel Packages and Deals</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, corporis dolorem numquam, repudiandae 
+                    quaerat aut voluptate quod,hic animi quia illum ea esse eligendi facilis ut. Alias enim deleniti quae.</p>
+                </div>
+                <div class="service-card">
+                  <i class="fa-solid fa-user-group"></i>
+                  <h2>Marketing and Reporting</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, corporis dolorem numquam, repudiandae 
+                    quaerat aut voluptate quod,hic animi quia illum ea esse eligendi facilis ut. Alias enim deleniti quae.</p>
+                </div>
+                <div class="service-card">
+                  <i class="fa-solid fa-desktop"></i>
+                  <h2>Flight Reservations</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, corporis dolorem numquam, repudiandae 
+                    quaerat aut voluptate quod,hic animi quia illum ea esse eligendi facilis ut. Alias enim deleniti quae.</p>
+                </div>
+                <div class="service-card">
+                  <i class="fa-solid fa-camera"></i>
+                  <h2>Event and Conference</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, corporis dolorem numquam, repudiandae 
+                    quaerat aut voluptate quod,hic animi quia illum ea esse eligendi facilis ut. Alias enim deleniti quae.</p>
+                </div>
+                <div class="service-card">
+                  <i class="fa-solid fa-gear"></i>
+                  <h2>Team Support</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, corporis dolorem numquam, repudiandae 
+                    quaerat aut voluptate quod,hic animi quia illum ea esse eligendi facilis ut. Alias enim deleniti quae.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="paragraph">
+          <p>
+            <h4><center>Our goal is to make your travel experience as smooth as a sunset on a tranquil beach. Let Travel X Agency be your passport to a world of excitement, exploration, and endless possibilities. Your journey begins with us!</center></h4>
+          </p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer>
+          <div class="footercontainer">
+            <div class="socialicons">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-google-plus"></i></a>
+              <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footernav">
+              <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Tours</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footerbottom">
+            <p>Copyright &copy;2023; Designed by <span class="designer">Travel X Agency</span></p>
+          </div>
+        </div>
+            
+        </footer>
+    </body>
+</html>
+ 

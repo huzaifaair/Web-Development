@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Portfolio Website
+        </title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                box-sizing: border-box;
+            }
+            body{
+                background: #333;
+            }
+            .hero{
+                height: 100vh;
+                width: 100%;
+                background-image: url(/Picture/background.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+            nav{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-top: 45px;
+                padding-left: 8%;
+                padding-right: 8%;
+            }
+            .logo{
+                color:white;
+                font-size: 35px;
+                letter-spacing: 1px;
+                cursor: pointer;
+            }
+            span{
+                color: rgb(16, 209, 16);
+            }
+            
+            nav ul li{
+                list-style-type: none;
+                display: inline-block;
+                padding: 10px 25px;
+            }
+            
+            nav ul li a{
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+            
+            nav ul li a:hover{
+                color: rgb(16, 209, 16);
+                transition: .4s;
+            }
+            
+            .btn{
+                background-color: rgb(16, 209, 16);
+                color: white;
+                text-decoration: none;
+                border: 2px solid transparent;
+                font-weight: bold;
+                padding: 10px 20px;
+                border-radius: 30px;
+                transition: transform .4s;
+            }
+            .btn:hover{
+                transform: scale(1.2) ;
+            }
+            .content{
+                position: absolute;
+                top: 50%;
+                left: 8%;
+                transform:translateY(-50%);
+            }
+            h1{
+                color: white;
+                margin: 20px 0px 20px;
+                font-size: 75px;
+            }
+            
+            h3{
+                color: white;
+                font-size: 25px;
+                margin-bottom: 50px;
+            }
+            
+            h4{
+                color:white;
+                letter-spacing: 2px;
+                font-size: 20px;
+            }
+            
+            .newlatter form{
+                width: 380px;
+                max-width: 100%;
+                position: relative;
+            }
+            
+            .newlatter form input:first-child{
+                display: inline-block;
+                width: 100%;
+                padding:14px 130px 14px 15px;
+                border: 2px solid rgb(16, 209, 16);
+                outline: none;
+                border-radius: 30px;
+            }
+            
+            .newlatter form input:last-child{
+                position: absolute;
+                display: inline-block;
+                outline: none;
+                border: none;
+                padding:10px 20px;
+                border-radius: 30px;
+                background-color:rgb(16, 209, 16);
+                color: white;
+                box-shadow: 0px 0px 5px #000,0px 0px 15px #858585;
+                top:6px;
+                right: 6px;
+            }
+            .about{
+                width: 100%;
+                padding: 10px 0px;
+                background-color: #191919;
+            }
+            
+            .about img{
+                height: auto;
+                width: 300px;
+            }
+            
+            .about-text{
+                width: 550px;
+            }
+            
+            .main{
+                width: 1130px;
+                max-width: 95%;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+            
+            .about-text h2{
+                color: white;
+                font-size: 75px;
+                text-transform: capitalize;
+                margin-bottom: 20px;
+            }
+            
+            .about-text h5{
+                color: white;
+                letter-spacing: 2px;
+                font-size: 22px;
+                margin-bottom: 25px;
+                text-transform: capitalize;
+            }
+            .about-text p{
+                color: #fcfcfc;
+                letter-spacing: 1px;
+                line-height: 28px;
+                font-size: 18px;
+                margin-bottom: 45px;
+            }
+            
+            button{
+                background-color: rgb(16, 209, 16);
+                color: white;
+                text-decoration: none;
+                border: 2px solid transparent;
+                font-weight: bold;
+                padding: 13px 30px;
+                border-radius: 30px;
+                transition: .4s;
+            }
+            button:hover{
+                background-color: transparent;
+                border:2px solid rgb(16, 209, 16);
+                cursor:pointer;
+            }
+            
+            .service{
+                background: #101010;
+                width:100%;
+                padding:100px 0px;
+            }
+            
+            .title h2{
+                color: white;
+                font-size: 75px;
+                width:1130px;
+                margin:30px auto;
+                text-align: center;
+            }
+            
+            .box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 400px;
+            }
+            
+            .card{
+                height: 365px;
+                width: 335px;
+                padding:20px 35px;
+                background: #191919;
+                border-radius: 20px;
+                margin:15px;
+                position:relative;
+                overflow: hidden;
+                text-align: center;
+            }
+            .card::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background:rgb(16, 209, 16);
+                transition: 0.4s;
+                transform: scale(.9);
+                z-index: -1;
+                transition: 0.4seconds;
+            }
+            
+            .card:hover:before{
+                transform: scale(1.1);
+                box-shadow: 10px 10px 15px rgb(16, 209, 16);
+                transition: 0.4seconds;
+            }
+            
+            .card:hover{
+                color:rgb(51, 108, 110);
+                box-shadow: 0 0 5px #121314;
+                transition: 0.4seconds;
+            }  
+            
+            .card i{
+                font-size: 50px;
+                display: block;
+                text-align: center;
+                margin:25px 0px;
+                color:rgb(16, 209, 16);
+            }
+            
+            h5{
+                color: white;
+                font-size: 23px;
+                margin-bottom: 15px;
+            }
+            
+            .pra p{
+                color: #fcfcfc;
+                font-size: 16px;
+                line-height: 25px;
+                margin-bottom: 25px;
+            }
+            .card .button{
+                background-color: rgb(16, 209, 16);
+                color: white;
+                text-decoration: none;
+                border: 2px solid transparent;
+                font-weight: bold;
+                padding: 9px 22px;
+                border-radius: 30px;
+                transition: .4s;   
+            }
+            
+            .card .button:hover{
+                background-color: transparent;
+                border:2px solid rgb(16, 209, 16);
+                cursor:pointer;
+            }
+            
+            
+            .contact-me{
+                width: 100%;
+                height: 290px;
+                background:#191919;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .contact-me p{
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 25px;
+            }
+            .contact-me .button-two{
+                background-color: rgb(16, 209, 16);
+                color: white;
+                text-decoration: none;
+                border: 2px solid transparent;
+                font-weight: bold;
+                padding: 9px 22px;
+                border-radius: 30px;
+                transition: .4s; 
+            }
+            
+            .contact-me .button-two:hover{
+                background-color: transparent;
+                border:2px solid rgb(16, 209, 16);
+                cursor:pointer;   
+            }
+            .skill-set{
+                background:#101010;
+                text-transform: uppercase;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                width: 550px;
+                margin:60px auto;
+                padding: 20px ;
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            }
+            .skill-set li{
+                margin: 20px 0;
+                padding: 10px;
+            }
+            .bar{
+                background: #353b48;
+                display: block;
+                height: 20px;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            }
+            .bar:hover{
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);       
+            }
+            .bar span{
+                height: 20px;
+                float: left;
+                background: linear-gradient(135deg,  rgb(16, 209, 16)0%,rgb(125, 252, 103)100%);
+            }
+            .skill-set h1{
+                text-align: center;
+            }
+            .skill-set h3{
+                margin: 5px;
+            }
+            .HTML{
+                width: 90%;
+                animation:  15s;
+            }
+            .CSS{
+                width: 75%;
+                animation:  15s;
+            }
+            .PYTHON{
+                width: 50%;
+                animation:  15s;
+            }
+            .C{
+                width: 90%;
+                animation:  15s;
+            }
+            .C-sharp{
+                width: 80%;
+                animation:  15s;
+            }
+            @keyframes HTML{
+                0%{
+                    width:0%;
+                }
+                100%{
+                    width: 90%;
+                }
+            }
+            @keyframes CSS{
+                0%{
+                    width:0%;
+                }
+                100%{
+                    width: 75%;
+                }
+            }
+            @keyframes PYTHON{
+                0%{
+                    width:0%;
+                }
+                100%{
+                    width: 50%;
+                }
+            }
+            @keyframes C{
+                0%{
+                    width:0%;
+                }
+                100%{
+                    width: 90%;
+                }
+            }
+            @keyframes C-sharp{
+                0%{
+                    width:0%;
+                }
+                100%{
+                    width: 80%;
+                }
+            }
+            footer{
+                position: relative;
+                width: 100%;
+                height: 400px;
+                background: #101010;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            footer p:nth-child(1){
+                font-size: 30px;
+                color: white;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+            
+            footer p:nth-child(2){
+                color: white;
+                font-size: 17px;
+                width: 500px;
+                text-align: center;
+                line-height: 26px;
+            }
+            
+            .social{
+                display: flex;
+            }
+            
+            .social a{
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgb(16, 209, 16);
+                border-radius: 50%;
+                margin: 22px 10px; 
+                color: white;
+                text-decoration: none;
+                font-size: 20pxs;
+            }
+            
+            .social a:hover{
+                transform: scale(1.3);
+                transition: .3s;
+            }
+            .end{
+                position: absolute;
+                color:rgb(16, 209, 16);
+                bottom:35px;
+                font-size: 14px;
+            }
+                        
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <nav>
+                <h2 class="logo">Portfo<span>lio</span></h2>
+                <ul>
+                    <li><a href="#content1">Home</a></li>
+                    <li><a href="#aboutme">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#skillset">Skills</a></li>
+                    <li><a href="#me">Contact Me</a></li>
+                </ul>
+                <a href="#" class="btn">Subscribe</a>
+            </nav>
+            <div class="content" id="content1">
+                <h4>Hello, My name is</h4>
+                <h1>Huzaifa <span>Mustafa</span></h1>
+                <h3>I' am a <span>Mern</span> Stack Developer</h3>
+                <div class="newlatter">
+                    <form>
+                        <input type="email" name="email" id="mail" placeholder="Enter Your Email">
+                        <input type="submit" name="submit" value="Lets Start">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---->
+        
+        <!---->
+        <section class="about" id="aboutme">
+            <div class="main">
+                <img src="/Picture/about me.PNG" alt="">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <h5>Developer <span>& Designer</span></h5>
+                    <p>I am a Mern Stack and  .Net Developer. I can provide clean code and pixel
+                        perfect design. I also make the Website more & more attractive with web
+                        animations. I can provide clean code and pixel perfect design. I also make
+                        the Website more & more attractive with web animations. A responsive website
+                        design will make your website accessible to all users, regardless of their device.
+                    </p>
+                    <button type="button">Let's Talk</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="service" id="services">
+            <div class="title">
+                <h2>My Services</h2>
+            </div>
+        
+
+        <div class="box" >
+            <div class="card">
+                <i class="fas fa-bars"></i>
+                <h5>Development Tools</h5>
+                <div class="pra">
+                    <p>Every website should be built with two primary goals: Firstly, it needs
+                        to work across all devices. Secondly, it needs to be fast as possible</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="#">Read More</a>
+                    </p>   
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-user"></i>
+                <h5>Mern Development</h5>
+                <div class="pra">
+                    <p>Every application should be built with two primary goals: Firstly, it needs
+                        to work across all devices. Secondly, it needs to be fast as possible</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="#">Read More</a>
+                    </p>   
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-bell"></i>
+                <h5>Notify Services</h5>
+                <div class="pra">
+                    <p>Every Developer should be built with two primary goals: Firstly, it needs
+                        to work on time. Secondly, it needs to be fast as per client request</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="#">Read More</a>
+                    </p>   
+                </div>
+            </div> 
+        </div>
+    </div>
+        
+    <div class="contact-me">
+        <p>Let Me Get You A <span>Beautiful</span> Full Stack Website and Application</p>
+        <a class="button-two" href="/CV/M. Huzaifa Mustafa CV.pdf" target="_blank">Hire Me</a>
+    </div>
+
+    <div class="skill-set" id="skillset">
+        <h1>Skill Set</h1>
+        <li><h3>Front End Development</h3>
+            <span class="bar"><span class="HTML"></span></span>
+        </li>
+        <li><h3>.Net Development</h3>
+            <span class="bar"><span class="CSS"></span></span>
+        </li>
+        <li><h3>Android and Flutter Application</h3>
+            <span class="bar"><span class="PYTHON"></span></span>
+        </li>
+        <li><h3>API</h3>
+            <span class="bar"><span class="C"></span></span>
+        </li>
+        <li><h3>Database</h3>
+            <span class="bar"><span class="C-sharp"></span></span>
+        </li>
+        
+    </div>
+
+    <footer id="me">
+        <p>Huzaifa Mustafa</p>
+        <p>For more Application and coding materials - please click on link below to 
+            Subscribe for the more detailed information:</p>
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p class="end">CopyRight &copy 2024 By Huzaifa Mustafa</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
